@@ -1,0 +1,15 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+.carousel-inner {
+    max-height: 500px; /* Ajusta según necesidad */
+}
+
+.card-img-fixed {
+    object-fit: cover; /* Evita distorsión de imágenes */
+}
+
+
