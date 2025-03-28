@@ -46,8 +46,8 @@ namespace retail_prueba
                 catch (Exception ex)
                 {
 
-                    Session.Add("Error", ex.Message);
-                    Response.Redirect("PantallaError.aspx", false);
+                    Session.Add("error", ex.Message);
+                    Response.Redirect("Error.aspx", false);
                 }
             }
             else
@@ -66,8 +66,8 @@ namespace retail_prueba
                 catch (Exception ex)
                 {
 
-                    Session.Add("Error", ex.Message);
-                    Response.Redirect("PantallaError.aspx", false);
+                    Session.Add("error", ex.ToString());
+                    Response.Redirect("Error.aspx", false);
                 }
             }
 
@@ -116,7 +116,8 @@ namespace retail_prueba
             catch (Exception ex)
             {
                 // Manejar errores
-                throw ex;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
 

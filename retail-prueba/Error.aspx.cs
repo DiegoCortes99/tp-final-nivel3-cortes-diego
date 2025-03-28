@@ -11,7 +11,7 @@ namespace retail_prueba
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			txtLabel.Text = Session["error"].ToString();
 		}
 	}
 }

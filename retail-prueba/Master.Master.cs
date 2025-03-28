@@ -116,7 +116,7 @@ namespace retail_prueba
             string paginaActual = Path.GetFileName(Request.Path).ToLower();
 
             // Si no es Default.aspx o Login.aspx, verificamos acceso
-            if (paginaActual != "default.aspx" && paginaActual != "login.aspx")
+            if (paginaActual != "default.aspx" && paginaActual != "login.aspx" && paginaActual != "error.aspx")
             {
                 // Si intenta acceder a ListaArticulos.aspx, verificamos si es admin
                 if (paginaActual == "listaarticulos.aspx")

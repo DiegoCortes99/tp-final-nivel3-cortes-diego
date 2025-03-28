@@ -79,8 +79,11 @@ namespace negocio
 
             try
             {
-                datos.crearConsulta("Update USERS set urlImagenPerfil = @imagenPerfil where Id = @Id");
-                datos.setearParametros("@imagenPerfil", usuario.UrlImagen);
+                //Operador coalessing Validar Null
+                datos.crearConsulta("Update USERS set nombre = @nombre, apellido = @apellido, urlImagenPerfil = @imagenPerfil where Id = @Id");
+                datos.setearParametros("@imagenPerfil", (object)usuario.UrlImagen ?? DBNull.Value);
+                datos.setearParametros("@nombre",(object)usuario.Nombre ?? DBNull.Value);
+                datos.setearParametros("@apellido",(object)usuario.Apellido ?? DBNull.Value);
                 datos.setearParametros("@Id", usuario.Id);
                 datos.ejecutarConsultaParametro();
             }

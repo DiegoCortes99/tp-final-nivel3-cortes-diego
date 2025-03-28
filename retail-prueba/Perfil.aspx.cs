@@ -68,11 +68,16 @@ namespace retail_prueba
 
                 Usuarios usuario = (Usuarios)Session["sessionActiva"];
 
-                string ruta = Server.MapPath("./Images/");
+                if (txtImagen.PostedFile.FileName != "")
+                {
+                    string ruta = Server.MapPath("./Images/");
+                    txtImagen.PostedFile.SaveAs(ruta + "Perfil-" + usuario.Id + ".jpg");
+                    usuario.UrlImagen = "Perfil-" + usuario.Id + ".jpg";
 
-                txtImagen.PostedFile.SaveAs(ruta + "Perfil-" + usuario.Id + ".jpg");
+                }
 
-                usuario.UrlImagen = "Perfil-" + usuario.Id + ".jpg";
+                usuario.Nombre = txtNombre.Text;
+                usuario.Apellido = txtApellido.Text; 
 
                 negocio.actualizarPerfil(usuario);
                 Response.Redirect("Default.aspx",false);
@@ -87,6 +92,7 @@ namespace retail_prueba
             {
 
                 Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
     }

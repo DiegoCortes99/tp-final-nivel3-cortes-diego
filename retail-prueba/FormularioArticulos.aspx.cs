@@ -47,7 +47,6 @@ namespace retail_prueba
                     ddlCategoria.DataBind();
                 }
 
-                //Codigo para Modificar
 
                 if (Request.QueryString["id"] != null && !IsPostBack)
                 {
@@ -80,17 +79,17 @@ namespace retail_prueba
                     txtImagenUrl.Text = seleccionado.ImagenUrl;
                     txtImagen_TextChanged(sender, e);
 
-
-
-
-
                 }
+
+                //Codigo para Modificar
+
 
             }
             catch (Exception ex)
             {
 
-                Session.Add("error", ex.Message);
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
 
@@ -130,7 +129,8 @@ namespace retail_prueba
             catch (Exception ex)
             {
 
-                Session.Add("error", ex.Message);
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
 
 
@@ -144,7 +144,10 @@ namespace retail_prueba
         protected void btnAgregarMarca_Click(object sender, EventArgs e)
         {
             Marcas nuevo = new Marcas();
+            btnAgregarMarca.Visible = false;
 
+
+            btnAgregarMarca.Visible = true;
             try
             {
                 nuevo.Descripcion = txtAgregarMarca.Text;
@@ -162,13 +165,17 @@ namespace retail_prueba
             catch (Exception ex)
             {
 
-                throw ex;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
+
+
         }
 
         protected void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
             Categorias nuevo = new Categorias();
+
 
             try
             {
@@ -188,8 +195,10 @@ namespace retail_prueba
             catch (Exception ex)
             {
 
-                throw ex;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
+
         }
 
         protected void txtEliminar_TextChanged(object sender, EventArgs e)
@@ -219,12 +228,13 @@ namespace retail_prueba
                     articulos.Id = int.Parse(txtId.Text);
                     articuloNegocio.eliminar(articulos);
                 }
-                Response.Redirect("ListaArticulos.aspx",false);
+                Response.Redirect("ListaArticulos.aspx", false);
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
 
@@ -233,6 +243,12 @@ namespace retail_prueba
             txtEliminar.Visible = true;
             btnConfirmarEliminacion.Visible = true;
 
+            if (Request.QueryString["id"] != null)
+            {
+                txtId.Visible = true;
+                btnAgregarMarca.Visible = false;
+                btnAgregarCategoria.Visible = false;
+            }
 
         }
     }

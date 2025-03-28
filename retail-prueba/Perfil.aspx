@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="retail_prueba.Perfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Estilos/ValidatorRequerid.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Estilos/EstilosPerfil.css" rel="stylesheet" />
@@ -27,11 +28,13 @@
         <div class="input-group">
             <label for="txtNombre">Nombre</label>
             <asp:TextBox runat="server" ID="txtNombre" />
+            <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="Debe Ingresar el Nombre" ControlToValidate="txtNombre" runat="server" />
         </div>
 
         <div class="input-group">
             <label for="txtApellido">Apellido</label>
             <asp:TextBox runat="server" ID="txtApellido" />
+            <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="Debe Ingresar el Apellido" ControlToValidate="txtApellido" runat="server" />
         </div>
 
         <div class="input-group">

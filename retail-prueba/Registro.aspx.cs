@@ -39,8 +39,9 @@ namespace retail_prueba
 			catch (Exception ex)
 			{
 
-				Session.Add("error", ex.ToString());
-			}
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
+            }
         }
     }
 }

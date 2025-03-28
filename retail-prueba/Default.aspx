@@ -67,13 +67,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://images.fravega.com/f300/320886a93d13d65f972055dd805d162b.jpg.webp" class="d-block w-100" alt="...">
+                <img src="Images/Img-3.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://images.fravega.com/f300/76fe5d9c67de23f0d1eb5844d7209e9c.jpg.webp" class="d-block w-100" alt="...">
+                <img src="Images/Img-2.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://images.fravega.com/f300/a6b1033759915dfd53d69d0e0f44e891.jpg.webp" class="d-block w-100" alt="...">
+                <img src="Images/Img-1.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

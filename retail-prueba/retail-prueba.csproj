@@ -73,11 +73,14 @@
     <Content Include="Estilos\EstilosMaterPage.css" />
     <Content Include="Estilos\EstilosPerfil.css" />
     <Content Include="Estilos\EstilosRegistro.css" />
+    <Content Include="Estilos\ValidatorRequerid.css" />
     <Content Include="FormularioArticulos.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Img-1.jpg" />
+    <Content Include="Images\Img-2.jpg" />
+    <Content Include="Images\Img-3.jpg" />
     <Content Include="ListaArticulos.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="PantallaError.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
@@ -128,13 +131,6 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
-    <Compile Include="PantallaError.aspx.cs">
-      <DependentUpon>PantallaError.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PantallaError.aspx.designer.cs">
-      <DependentUpon>PantallaError.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,7 +167,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
