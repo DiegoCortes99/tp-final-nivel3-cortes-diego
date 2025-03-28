@@ -84,19 +84,24 @@
                         <asp:Image CssClass="mb-1" ID="imgArticulo" ImageUrl="https://images.ctfassets.net/ihx0a8chifpc/GTlzd4xkx4LmWsG1Kw1BB/ad1834111245e6ee1da4372f1eb5876c/placeholder.com-1280x720.png?w=1920&q=60&fm=webp" Width="400px" runat="server" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                
-                <div class="row">
-                    <div>
-                        <asp:Button ID="btnEliminar" Text="Eliminar" runat="server" CssClass="btn btn-warning mb-1" OnClick="btnEliminar_Click" />
 
-                    </div>
+                <div class="row">
+                    <%if (Request.QueryString["id"] != null)
+                        {
+                    %>
+                            <div>
+                                <asp:Button ID="btnEliminar" Text="Eliminar" runat="server" CssClass="btn btn-warning mb-1" OnClick="btnEliminar_Click" />
+
+                            </div>
+                    <% } %>
+
                     <div class="col-5 d-flex justify-content-start gap-2 mb-1">
                         <asp:TextBox runat="server" ID="txtEliminar" PlaceHolder="Ingrese el codigo del producto y presione Tab" CssClass="form-control" Style="width: 350px" AutoPostBack="true" OnTextChanged="txtEliminar_TextChanged" />
                         <asp:Button ID="btnConfirmarEliminacion" runat="server" Text="Eliminar" OnClick="btnConfirmarEliminacion_Click" Visible="false" Enabled="false" CssClass="btn btn-danger m-1" />
                         <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

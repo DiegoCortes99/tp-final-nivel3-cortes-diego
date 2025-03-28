@@ -9,10 +9,10 @@ using negocio;
 
 namespace retail_prueba
 {
-	public partial class Perfil : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class Perfil : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
             //Verifica si viene algo viajando en la session.
             //Y verifica si existe una session activa.
 
@@ -26,7 +26,7 @@ namespace retail_prueba
                     if (Seguridad.sessionActiva(Session["sessionActiva"]))
                     {
                         Usuarios usuario = (Usuarios)Session["sessionActiva"];
-                        
+
                         txtNombre.Text = usuario.Nombre;
                         txtApellido.Text = usuario.Apellido;
                         txtEmail.Text = usuario.Email;
@@ -47,11 +47,11 @@ namespace retail_prueba
                 {
 
                     Session.Add("error", ex.ToString());
-                    Response.Redirect("Error.aspx",false);
+                    Response.Redirect("Error.aspx", false);
                 }
             }
-  
-		}
+
+        }
 
         protected void txtImagenURL_TextChanged(object sender, EventArgs e)
         {
@@ -64,28 +64,38 @@ namespace retail_prueba
             {
                 //Escribir perfil
 
-                UsuarioNegocio negocio = new UsuarioNegocio();
-
-                Usuarios usuario = (Usuarios)Session["sessionActiva"];
-
-                if (txtImagen.PostedFile.FileName != "")
+                Page.Validate();
+                if (!Page.IsValid)
                 {
-                    string ruta = Server.MapPath("./Images/");
-                    txtImagen.PostedFile.SaveAs(ruta + "Perfil-" + usuario.Id + ".jpg");
-                    usuario.UrlImagen = "Perfil-" + usuario.Id + ".jpg";
+                    return;
+                }
+                else
+                {
+                    UsuarioNegocio negocio = new UsuarioNegocio();
+
+                    Usuarios usuario = (Usuarios)Session["sessionActiva"];
+
+                    if (txtImagen.PostedFile.FileName != "")
+                    {
+                        string ruta = Server.MapPath("./Images/");
+                        txtImagen.PostedFile.SaveAs(ruta + "Perfil-" + usuario.Id + ".jpg");
+                        usuario.UrlImagen = "Perfil-" + usuario.Id + ".jpg";
+
+                    }
+
+                    usuario.Nombre = txtNombre.Text;
+                    usuario.Apellido = txtApellido.Text;
+
+                    negocio.actualizarPerfil(usuario);
+                    Response.Redirect("Default.aspx", false);
+
+                    //Leer perfil
+
+                    Image imgLogin = (Image)Master.FindControl("BtnLogin");
+                    imgLogin.ImageUrl = "~/Images/" + usuario.UrlImagen;
 
                 }
 
-                usuario.Nombre = txtNombre.Text;
-                usuario.Apellido = txtApellido.Text; 
-
-                negocio.actualizarPerfil(usuario);
-                Response.Redirect("Default.aspx",false);
-
-                //Leer perfil
-
-                Image imgLogin = (Image)Master.FindControl("BtnLogin");
-                imgLogin.ImageUrl = "~/Images/" + usuario.UrlImagen;
 
             }
             catch (Exception ex)

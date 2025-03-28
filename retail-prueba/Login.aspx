@@ -13,8 +13,9 @@
 
         <div class="input-group">
             <label for="txtUsuario">Nombre de usuario</label>
-            <asp:TextBox ID="txtUsuarioo" TextMode="Email" runat="server" />
+            <asp:TextBox ID="txtUsuarioo" runat="server" />
             <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El email es requerido" ControlToValidate="txtUsuarioo" runat="server" />
+            <asp:RegularExpressionValidator ErrorMessage="Formato Email Incorrecto" ControlToValidate="txtUsuarioo" runat="server" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3}|cl)(\]?)$" />
             <%--<input runat="server" type="text" id="txtUsuario" name="txtUsuario" placeholder="Ingrese su nombre de usuario" required>--%>
         </div>
 
