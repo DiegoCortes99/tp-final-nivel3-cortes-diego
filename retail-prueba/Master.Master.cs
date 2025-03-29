@@ -34,58 +34,6 @@ namespace retail_prueba
                 }
 
             }
-
-
-
-
-            //if (Seguridad.sessionActiva(Session["sessionActica"]))
-            //{
-            //    BtnLogin.ImageUrl = "~/Images/" + ((Usuarios)Session["sessionActiva"]).UrlImagen;
-            //}
-            //else
-            //{
-            //    BtnLogin.ImageUrl = "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg";
-            //}
-
-
-
-            //if (!IsPostBack)
-            //{
-            //    //Valida si existe una session activa, si es true muestra los valores de la nabvar.
-
-            //    if (!(Page is Default || Page is Login))
-            //    {
-            //        if (!Seguridad.sessionActiva(Session["sessionActiva"]))
-            //        {
-            //            Response.Redirect("Default.aspx", false);
-            //        }
-            //    }
-
-
-
-            //    //else
-            //    //{
-            //    //    lnkPerfil.Visible = true;
-            //    //    lnkFavoritos.Visible = true;
-
-            //    //    //Solo muestra nabvar en la lista si tienes permisos de admin.
-            //    //    if (Seguridad.esAdmin(Session["sessionActiva"]))
-            //    //        lnkLista.Visible = true;
-            //    //}
-
-            //    if (Seguridad.sessionActiva(Session["sessionActiva"]))
-            //    {
-            //        lnkPerfil.Visible = true;
-            //        lnkFavoritos.Visible = true;
-            //    }
-
-            //    if (Seguridad.esAdmin(Session["sessionActiva"]))
-            //    {
-            //        lnkPerfil.Visible = true;
-            //        lnkFavoritos.Visible = true;
-            //        lnkLista.Visible = true;
-            //    }
-            //}
         }
 
         private void ConfigurarNavegacion()
@@ -94,14 +42,14 @@ namespace retail_prueba
             // Los demás enlaces requieren autenticación
 
             lnkPerfil.Visible = false;
-            lnkFavoritos.Visible = false;
+            //lnkFavoritos.Visible = false;
             lnkLista.Visible = false;
 
             // Si hay sesión activa, mostramos enlaces básicos
             if (Seguridad.sessionActiva(Session["sessionActiva"]))
             {
                 lnkPerfil.Visible = true;
-                lnkFavoritos.Visible = true;
+                //lnkFavoritos.Visible = true;
 
                 // Si además es administrador, mostramos enlace a Lista
                 if (Seguridad.esAdmin(Session["sessionActiva"]))

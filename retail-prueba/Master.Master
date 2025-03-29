@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="retail_prueba.Mater" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="retail_prueba.Mater" %>
 
 <!DOCTYPE html>
 
@@ -33,7 +34,7 @@
                         <%--<a class="nav-link active" aria-current="page" href="Default.aspx">Catalogo</a>--%>
 
                         <asp:HyperLink ID="lnkPerfil" Visible="false" CssClass="nav-link" runat="server" NavigateUrl="Perfil.aspx">Mi Perfil</asp:HyperLink>
-                        <asp:HyperLink ID="lnkFavoritos" Visible="false" CssClass="nav-link" runat="server" NavigateUrl="Favoritos.aspx">Favoritos</asp:HyperLink>
+                        <%--<asp:HyperLink ID="lnkFavoritos" Visible="false" CssClass="nav-link" runat="server" NavigateUrl="Favoritos.aspx">Favoritos</asp:HyperLink>--%>
                         <asp:HyperLink ID="lnkLista" Visible="false" CssClass="nav-link" runat="server" NavigateUrl="ListaArticulos.aspx">Lista</asp:HyperLink>
 
                         <%--<a class="nav-link" href="Perfil.aspx">Mi Perfil</a>

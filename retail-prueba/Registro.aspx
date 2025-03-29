@@ -33,7 +33,8 @@
             <label for="txtEmail">Email</label>
             <asp:TextBox ID="txtEmaill" runat="server" />
             <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="Debe Ingresar el Email" ControlToValidate="txtEmaill" runat="server" />
-            <asp:RegularExpressionValidator ErrorMessage="Formato Email Incorrecto" ControlToValidate="txtUsuarioo" runat="server" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3}|cl)(\]?)$" />
+
+            <asp:RegularExpressionValidator ErrorMessage="Formato Email Incorrecto" ControlToValidate="txtEmaill" runat="server" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3}|cl)(\]?)$" />
             <%--<input runat="server" type="email" id="txtEmail" name="txtEmail" placeholder="Ingrese su email" required>--%>
         </div>
 

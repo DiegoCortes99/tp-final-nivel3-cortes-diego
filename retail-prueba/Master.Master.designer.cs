@@ -42,15 +42,6 @@ namespace retail_prueba
         protected global::System.Web.UI.WebControls.HyperLink lnkPerfil;
 
         /// <summary>
-        /// Control lnkFavoritos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkFavoritos;
-
-        /// <summary>
         /// Control lnkLista.
         /// </summary>
         /// <remarks>
