@@ -24,12 +24,12 @@
                 <div class="mb-3">
                     <label for="txtCodigo" class="form-label">Codigo: </label>
                     <asp:TextBox ID="txtCodigo" CssClass="form-control" runat="server" />
-                    <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtCodigo" runat="server" />
+                    <%--<asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtCodigo" runat="server" />--%>
                 </div>
                 <div class="mb-3">
                     <label for="txtNombre" class="form-label">Nombre: </label>
                     <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server" />
-                    <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtNombre" runat="server" />
+                    <%--<asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtNombre" runat="server" />--%>
                 </div>
                 <div class="mb-3">
                     <label for="ddlMarca" class="form-label">Marca: </label>
@@ -66,12 +66,12 @@
                 <div class="mb-3">
                     <label for="Descripcion" class="form-label">Descripcion: </label>
                     <asp:TextBox TextMode="MultiLine" ID="txtDescripcion" CssClass="form-control" runat="server" />
-                    <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtDescripcion" runat="server" />
+                    <%--<asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtDescripcion" runat="server" />--%>
                 </div>
                 <div class="mb-3">
                     <label for="Precio" class="form-label">Precio: </label>
                     <asp:TextBox ID="txtPrecio" CssClass="form-control" runat="server" />
-                    <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtPrecio" runat="server" />
+                    <%--<asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtPrecio" runat="server" />--%>
                 </div>
 
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -79,7 +79,7 @@
                         <div class="mb-3">
                             <label for="txtImagenUrl" class="form-label">Url Imagen: </label>
                             <asp:TextBox AutoPostBack="true" OnTextChanged="txtImagen_TextChanged" ID="txtImagenUrl" CssClass="form-control" runat="server" />
-                            <asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtImagenUrl" runat="server" />
+                            <%--<asp:RequiredFieldValidator CssClass="validarRequerido" ErrorMessage="El campo no puede estar vacio" ControlToValidate="txtImagenUrl" runat="server" />--%>
                         </div>
                         <asp:Image CssClass="mb-1" ID="imgArticulo" ImageUrl="https://images.ctfassets.net/ihx0a8chifpc/GTlzd4xkx4LmWsG1Kw1BB/ad1834111245e6ee1da4372f1eb5876c/placeholder.com-1280x720.png?w=1920&q=60&fm=webp" Width="400px" runat="server" />
                     </ContentTemplate>
